@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Create A route: a mapping from the web-browser 
   #to the python code
 @app.route('/hello') #'hostname/hello' 
-#@app.route('/') #No route
+#@app.route('/') #No route, just the host
 def helloIndex():
     return "Hello World from python Flask!'
 
@@ -24,6 +24,6 @@ $ python hello.py
 http://0.0.0.0:5000/hello # slash hello is the route
 Hello World from python Flask!
 
-http://0.0.0.0:5000 # No route
+http://0.0.0.0:5000 # No route, just the domain , 0.0.0.0
 #----------------------------------------------
 #----------------------------------------------
