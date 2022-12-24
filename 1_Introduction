@@ -1,9 +1,14 @@
 #-----------------------------------------------------
-Flask
-Python 
-SQLite
-Jinja2 (Template language)
-
+Flask, Python, SQLite, and Jinja2 (Template language)
+#-----------------------------------------------------
+### What is Flask?
+- A microframework for python based on Werkzeug, Jinja2, and good interations.
+- It is a BSD Licensed
+- pip install Flask
+   from flask import Flask
+   app = flask('__name__')
+- Lightweight
+- The Template Language it uses is Jinja2.
 #-----------------------------------------------------
 Isolated environment where you can install separate IDE versions and packages
 1. check conda version
