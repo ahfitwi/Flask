@@ -76,3 +76,62 @@ def helloIndex():
  
 app.run(host='0.0.0.0', port= 5000)
 #Start the server with
+
+#----------------------------------------------
+# Routing
+#----------------------------------------------
+Key facts:
+A route is a mapping of an URL, website address,  
+      to a Python function
+Add @app.route('/hello') before a function 
+        definition, where hello is your URL path
+The python return string is shown in the web browser
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/') #'hostname/hello' 
+def helloIndex():
+    return "Hello World from python Flask!"
+
+@app.route('/blog') 
+def blog():
+    return "Python Blog"
+    
+@app.route('/author') 
+def author():
+    return "The Boss"
+    
+@app.route('/CR') 
+def cr():
+    return "CR2022"    
+  
+#----------------------------------------------
+Key facts: 
+A route is a mapping of an URL, website address,  to a Python function
+Add @app.route('/hello') before a function definition, where hello is your URL path
+The python return string is shown in the web browser
+#----------------------------------------------
+# Dynamic Routes
+#----------------------------------------------
+# Dynamic Route: first param is created byt 
+# the next one can be anything.
+@app.route('/posts/<string:name>/"')
+def nm():
+    return name # name maps to python function
+#----------------------------------------------    
+@app.route("/user/<name>/<age>/") #Two optional params
+def getUserData(name, age):
+    return name + " "+ age
+
+Key facts:
+A dynamic route is used to pass URL variables
+A route can accept a variable 
+    @app.route("/hello/<string:name>/")
+This can also be without specific data type
+    @app.route("/hello/<name>/")
+You can get more than one variable from the URL
+    @app.route("/user/<name>/<age>")
+The variables must also exist in the function definition,
+    @app.route("/user/<name>/<age>")
+    def getUser(name, age):
