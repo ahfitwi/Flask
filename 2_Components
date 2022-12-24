@@ -1,0 +1,23 @@
+Revision
+#----------------------------------------------
+# Import Flask
+from flask import Flask
+#----------------------------------------------
+# Initialization: Initialize it
+app = Flask(__name__)
+#----------------------------------------------
+# Create A route: a mapping from the web-browser 
+  #to the python code
+@app.route('/hello') #'hostname/hello' 
+def helloIndex():
+    return "Hello World from python Flask!'
+
+#----------------------------------------------
+# Start A webserver to make it run
+app.run(host='0.0.0.0', port=5000)
+#----------------------------------------------
+# Run Flask Program
+$ python hello.py
+#----------------------------------------------
+#----------------------------------------------
+#----------------------------------------------
