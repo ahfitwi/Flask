@@ -1,4 +1,37 @@
+#-----------------------------------------------------
 Flask
 Python 
 SQLite
 Jinja2 (Template language)
+
+#-----------------------------------------------------
+Isolated environment where you can install separate IDE versions and packages
+1. check conda version
+   > conda -V
+2. Update Conda version
+   > conda update conda
+3. Create venv
+   > conda -n create flaskvenv python = 3.7 anaconda
+4. Activate the venv
+   > conda activate flaskvenv
+5. Install packages to the venv
+   > conda install -n flaskvenv package
+6. Deactivate the venv
+   > deactivate flaskvenv
+7. Delete the venv
+   > conda remove -n flaskvenv -all
+#-----------------------------------------------------
+#Key facts
+A virtual environment (virtualenv) is an isolated environment for your project
+A virtualenv prevents conflicts of modules.   
+You can setup a virtual environment with these commands
+    
+    virtualenv -p python3 example
+    cd example
+    source bin/activate
+    mkdir src
+    cd src
+    Install Flask in the virtualenv:
+
+# pip needs to be installed
+  pip install flask
