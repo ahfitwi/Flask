@@ -26,4 +26,53 @@ Hello World from python Flask!
 
 http://0.0.0.0:5000 # No route, just the domain , 0.0.0.0
 #----------------------------------------------
+# Kill it
+pkill -9 -f python
 #----------------------------------------------
+# Main domain name /slash routes, specific routes
+
+#----------------------------------------------
+from flask import request
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+    
+@app.get('/shutdown')
+def shutdown():
+    shutdown_server()
+    return 'Server shutting down...'
+#----------------------------------------------
+#Here is another approach that is more contained:
+
+from multiprocessing import Process
+
+server = Process(target=app.run)
+server.start()
+# ...
+server.terminate()
+server.join()
+
+#----------------------------------------------
+Key facts
+#----------------------------------------------
+Setup a virtualenv
+Allow port 5000 in your firewall (if you have one running)
+Save the code below as hello.py
+The code to create a hello world app:
+
+from flask import Flask
+ 
+app = Flask(__name__)
+ 
+@app.route('/')
+def index():
+    return 'Python Flask'
+ 
+@app.route('/hello')
+def helloIndex():
+    return 'Hello World from Python Flask!'
+ 
+app.run(host='0.0.0.0', port= 5000)
+#Start the server with
