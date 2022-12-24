@@ -9,6 +9,7 @@ app = Flask(__name__)
 # Create A route: a mapping from the web-browser 
   #to the python code
 @app.route('/hello') #'hostname/hello' 
+#@app.route('/') #No route
 def helloIndex():
     return "Hello World from python Flask!'
 
@@ -19,5 +20,10 @@ app.run(host='0.0.0.0', port=5000)
 # Run Flask Program
 $ python hello.py
 #----------------------------------------------
+# On Browser
+http://0.0.0.0:5000/hello # slash hello is the route
+Hello World from python Flask!
+
+http://0.0.0.0:5000 # No route
 #----------------------------------------------
 #----------------------------------------------
